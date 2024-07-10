@@ -34,9 +34,9 @@ A custom comparator or comparer is a function or object that defines custom rule
 ### References
 
 - **Java and Kotlin:**
-  - [Comparator Interface (Java)](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html){:target="_blank"}
-  - [How to Use Comparator in Java](https://www.baeldung.com/java-comparator-comparable){:target="_blank"}
-  - [Using Comparators in Kotlin](https://kotlinlang.org/docs/collection-ordering.html#using-comparators){:target="_blank"}
+  - [Comparator Interface (Java)](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html)
+  - [How to Use Comparator in Java](https://www.baeldung.com/java-comparator-comparable)
+  - [Using Comparators in Kotlin](https://kotlinlang.org/docs/collection-ordering.html#using-comparators)
 
 - **C#:**
   - [IComparer Interface](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.icomparer-1)
