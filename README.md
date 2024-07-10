@@ -1,4 +1,4 @@
-# Natural Sort Kata
+# Natural Sort
 
 ## Problem
 
