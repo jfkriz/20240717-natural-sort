@@ -4,7 +4,7 @@
 
 Natural sorting, also known as "human sorting" or "alphanumeric sorting," is a way to sort strings in a manner that is more intuitive to humans. For example, instead of sorting strings like "file1", "file10", and "file2" as "file1", "file10", "file2" (lexicographical order), it would sort them as "file1", "file2", "file10".
 
-The goal of this challenge is to implement natural sorting in the programming language of your choice by creating a custom comparator/comparer. 
+The goal of this challenge is to implement natural sorting in the programming language of your choice by creating a custom comparator/comparer. Please don't use any AI assistance to start. Think through the problem of comparing two items and deciding which one would appear first based on how we want to sort them.
 
 Bonus challenge: the solution should support sorting in both ascending and descending order.
 
