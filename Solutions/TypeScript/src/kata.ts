@@ -5,10 +5,6 @@ export class Kata {
 }
 
 export function humanSortComparator(a: string, b: string): number {
-    // Learned about the options to pass to localeCompare today, but that is cheating... :)
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator#numeric
-    // return a.localeCompare(b, undefined, { numeric: true });
-
     // If a and b represent the same string, return 0 (a == b)
     if(a === b) {
         return 0;
@@ -85,4 +81,43 @@ export function humanSortComparator(a: string, b: string): number {
 
     // If we got here, the strings are equal
     return 0;
+}
+
+export function humanSortComparatorLazy(a: string, b: string): number {
+    // Learned about the options to pass to localeCompare today, but that is cheating... :)
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator#numeric
+    return a.localeCompare(b, undefined, { numeric: true });
+}
+
+export function humanSortComparatorAI(a: string, b: string): number {
+    // Split strings into parts of digits and non-digits
+    const splitIntoParts = (str: string) => str.match(/(\d+|\D+)/g) || [];
+    const aParts = splitIntoParts(a);
+    const bParts = splitIntoParts(b);
+
+    // Compare parts one by one
+    for (let i = 0; i < Math.min(aParts.length, bParts.length); i++) {
+        const aPart = aParts[i];
+        const bPart = bParts[i];
+
+        // Check if both parts are digits
+        const aIsDigit = /^\d+$/.test(aPart);
+        const bIsDigit = /^\d+$/.test(bPart);
+
+        if (aIsDigit && bIsDigit) {
+            // Compare as numbers
+            const diff = parseInt(aPart, 10) - parseInt(bPart, 10);
+            if (diff !== 0) return diff;
+        } else if (!aIsDigit && !bIsDigit) {
+            // Compare as strings
+            const strComp = aPart.localeCompare(bPart);
+            if (strComp !== 0) return strComp;
+        } else {
+            // Digit parts come before non-digit parts
+            return aIsDigit ? -1 : 1;
+        }
+    }
+
+    // If all compared parts are equal, the shorter array comes first
+    return aParts.length - bParts.length;
 }
