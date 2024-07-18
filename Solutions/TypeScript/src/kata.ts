@@ -60,13 +60,13 @@ export function humanSortComparator(a: string, b: string): number {
                 // Is this cheating? Should I compare the strings by hand?
                 result = aGroup.localeCompare(bGroup);
             } else {
-                // group a is text, and b is numeric; text comes before numbers
-                result = -1;
+                // group a is text, and b is numeric; numeric comes before text
+                result = 1;
             }
         } else {
             if (isBText) {
-                // group a is numeric, and b is text; text comes before numbers
-                result = 1;
+                // group a is numeric, and b is text; numeric comes before text
+                result = -1;
             } else {
                 // Two groups of numbers, so compare them as numbers (so 1 and 2 will come before 10, for example)
                 result = parseInt(aGroup) - parseInt(bGroup);

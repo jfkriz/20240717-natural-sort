@@ -40,14 +40,14 @@ Object.keys(comparators).forEach((name) => {
             expect(input).toEqual(expected);
         });
         test('should sort simple case of numbers with one group of letters properly', () => {
-            const input = ["789", "456", "abc"];
-            const expected = ["abc", "456", "789"];
+            const input = ["abc", "789", "456"];
+            const expected = ["456", "789", "abc"];
             input.sort(fixture);
             expect(input).toEqual(expected);
         });
         test('should sort simple case of letters with one group of numbers properly', () => {
-            const input = ["123", "def", "abc"];
-            const expected = ["abc", "def", "123"];
+            const input = ["def", "abc", "123"];
+            const expected = ["123", "abc", "def"];
             input.sort(fixture);
             expect(input).toEqual(expected);
         });
